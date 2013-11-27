@@ -27,7 +27,7 @@ h1 {
 }
 
 h1 span a {
-    font-size: .2em;
+    font-size: .5em;
     text-decoration: none;
 }
 
@@ -73,6 +73,7 @@ textarea {
 
 .more {
     display: none;
+    max-width: 800px;
 }
 
 .more p {
@@ -80,7 +81,8 @@ textarea {
     font-family: georgia, serif;
     font-style: italic;
     margin-top: 0;
-    color: #2970C5;
+    color: #5F5F5F;
+    line-height: 1.5em;
 }
 
 .show {
@@ -97,6 +99,10 @@ button {
 
 .emo {
     text-transform: lowercase;
+}
+
+.more p:nth-child(2) {
+    margin-bottom: 0;
 }
 /* ==========================================================================
    Media Queries
