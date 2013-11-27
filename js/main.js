@@ -8,7 +8,6 @@ $(".more_btn").click(function() {
 	$(".more").toggleClass( "show" );
 });
 
-
 //This ajax request calls 10 initial sets of random array elements strung together (on page load). 
 $.ajax({
   type: "GET",
@@ -25,6 +24,7 @@ $.ajax({
 		};
   }
 });
+
 /*
 The following ajax request loads additional array elements when the user scrolls to the bottom of the page.
 
@@ -35,7 +35,6 @@ are hidden from fiew above the scrollable area. When $(document).height() - $(wi
 scrollbar position, this means we have scrolled to the bottom of the document.  This is our signal that ajax 
 needs to add additional content to the page. 
 */
-
 $(window).scroll(function() 
 {
   if($(window).scrollTop() == $(document).height() - $(window).height())

@@ -17,7 +17,7 @@
 # http://enable-cors.org/
 
 # <IfModule mod_headers.c>
-#    Header set Access-Control-Allow-Origin "*"
+#    Header set Access-Control-Allow-Origin "*" 
 # </IfModule>
 
 # ------------------------------------------------------------------------------
