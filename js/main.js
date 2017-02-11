@@ -7,7 +7,11 @@ function getRandomArbitrary (min, max) {
 $(".more_btn").click(function() { 
 	$(".more").toggleClass( "show" );
 });
-
+$(window).scroll(function() {
+   if($(window).scrollTop() + $(window).height() == $(document).height()) {
+       alert("bottom!");
+   }
+});
 //This ajax request calls 10 initial sets of random array elements strung together (on page load). 
 $.ajax({
   type: "GET",
@@ -58,8 +62,4 @@ needs to add additional content to the page.
   }
 });*/
 
-$(window).scroll(function() {
-   if($(window).scrollTop() + $(window).height() == $(document).height()) {
-       alert("bottom!");
-   }
-});
+
