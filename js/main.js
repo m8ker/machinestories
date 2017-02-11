@@ -36,7 +36,6 @@ $.ajax({
 		};
   }
 });
-alert("HI")
 /*
 The following ajax request loads additional array elements when the user scrolls to the bottom of the page.
 
