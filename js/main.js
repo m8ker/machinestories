@@ -8,10 +8,10 @@ $(".more_btn").click(function() {
 	$(".more").toggleClass( "show" );
 });
 $(window).scroll(function() {
-   if($(window).scrollTop() + $(window).height() == $(document).height()) {
-       alert("bottom!");
-   }
-});
+       if($(window).scrollTop() + $(window).height() == getDocHeight()) {
+           alert("bottom!");
+       }
+   });
 //This ajax request calls 10 initial sets of random array elements strung together (on page load). 
 $.ajax({
   type: "GET",
