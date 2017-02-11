@@ -39,7 +39,8 @@ $(window).scroll(function()
 {
   if($(window).scrollTop() == $(document).height() - $(window).height())
   {
-    $.ajax({
+	  alert("hi");
+    /*$.ajax({
     	type: "GET",
 		  url: "http://m8ker.github.io/machinestories/js/data.js",
 		  dataType: "script",
@@ -53,7 +54,7 @@ $(window).scroll(function()
         $("#postswrapper").append('<p><span class="adj">'+adjectives[random_adj]+"</span>"+" "+occupations[random_occ]+" "+"feeling"+" "+'<span class="emo">'+emotions[random_emo]+"</span>"+","+" "+verbs[random_vrb]+"s"+" "+adverbs[random_adv]+"."+"</p>");
     	  };
     	}
-    });
+    });*/
   }
 });
 
