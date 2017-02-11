@@ -7,6 +7,14 @@ function getRandomArbitrary (min, max) {
 $(".more_btn").click(function() { 
 	$(".more").toggleClass( "show" );
 });
+function getDocHeight() {
+    var D = document;
+    return Math.max(
+        D.body.scrollHeight, D.documentElement.scrollHeight,
+        D.body.offsetHeight, D.documentElement.offsetHeight,
+        D.body.clientHeight, D.documentElement.clientHeight
+    );
+}
 $(window).scroll(function() {
        if($(window).scrollTop() + $(window).height() == getDocHeight()) {
            alert("bottom!");
