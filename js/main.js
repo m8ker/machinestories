@@ -34,17 +34,29 @@ are hidden from fiew above the scrollable area. When $(document).height() - $(wi
 scrollbar position, this means we have scrolled to the bottom of the document.  This is our signal that ajax 
 needs to add additional content to the page. 
 */
-function getDocHeight() {
-    var D = document;
-    return Math.max(
-        D.body.scrollHeight, D.documentElement.scrollHeight,
-        D.body.offsetHeight, D.documentElement.offsetHeight,
-        D.body.clientHeight, D.documentElement.clientHeight
-    );
-}
-$(window).scroll(function() {
-       if($(window).scrollTop() + $(window).height() == getDocHeight()) {
-           $.ajax({
+
+var _throttleTimer = null;
+var _throttleDelay = 100;
+var $window = $(window);
+var $document = $(document);
+
+$document.ready(function () {
+
+    $window
+        .off('scroll', ScrollHandler)
+        .on('scroll', ScrollHandler);
+
+});
+
+function ScrollHandler(e) {
+    //throttle event:
+    clearTimeout(_throttleTimer);
+    _throttleTimer = setTimeout(function () {
+        console.log('scroll');
+
+        //do work
+        if ($window.scrollTop() + $window.height() > $document.height() - 100) {
+                       $.ajax({
 		type: "GET",
 			  url: "http://m8ker.github.io/machinestories/js/data.js",
 			  dataType: "script",
@@ -59,8 +71,15 @@ $(window).scroll(function() {
 		  };
 		}
 	    });
-       }
-   });
+        }
+
+    }, _throttleDelay);
+}
+
+
+
+
+
 
 /*$(window).scroll(function() 
 {
