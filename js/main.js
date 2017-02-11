@@ -11,7 +11,7 @@ $(".more_btn").click(function() {
 //This ajax request calls 10 initial sets of random array elements strung together (on page load). 
 $.ajax({
   type: "GET",
-  url: "http://m8ker.github.io/machinestories/js/data.js",
+  url: "data.js",
   dataType: "script",
   success: function(){
 		for (var i = 1; i <= 10; i++) {
@@ -41,7 +41,7 @@ $(window).scroll(function()
   {
     $.ajax({
     	type: "GET",
-		  url: "http://m8ker.github.io/machinestories/js/data.js",
+		  url: "data.js",
 		  dataType: "script",
     	success: function() {
     		for (var i = 1; i <= 10; i++) {
