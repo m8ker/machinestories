@@ -58,7 +58,7 @@ function ScrollHandler(e) {
         if ($window.scrollTop() + $window.height() > $document.height() - 100) {
                        $.ajax({
 		type: "GET",
-			  url: "http://m8ker.github.io/machinestories/js/data.js",
+			  url: "/js/data.js",
 			  dataType: "script",
 		success: function() {
 			for (var i = 1; i <= 10; i++) {
@@ -75,33 +75,3 @@ function ScrollHandler(e) {
 
     }, _throttleDelay);
 }
-
-
-
-
-
-
-/*$(window).scroll(function() 
-{
-  if($(window).scrollTop() == $(document).height() - $(window).height())
-  {
-	  alert("hi");
-    $.ajax({
-    	type: "GET",
-		  url: "http://m8ker.github.io/machinestories/js/data.js",
-		  dataType: "script",
-    	success: function() {
-    		for (var i = 1; i <= 10; i++) {
-	    		var random_occ = getRandomArbitrary (0, occupations.length),
-							random_adj = getRandomArbitrary (0, adjectives.length),
-              random_vrb = getRandomArbitrary (0, verbs.length),
-              random_adv = getRandomArbitrary (0, adverbs.length),
-							random_emo = getRandomArbitrary (0, emotions.length);
-        $("#postswrapper").append('<p><span class="adj">'+adjectives[random_adj]+"</span>"+" "+occupations[random_occ]+" "+"feeling"+" "+'<span class="emo">'+emotions[random_emo]+"</span>"+","+" "+verbs[random_vrb]+"s"+" "+adverbs[random_adv]+"."+"</p>");
-    	  };
-    	}
-    });
-  }
-});*/
-
-
